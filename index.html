@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>JustLog</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h2 class="titulo">JustLog</h2>
+        </div>
+    </header>
+    <main>
+        <section class="container">
+            <h2>Entregas agendadas</h2>
+           
+            <table class="tabela">
+                <thead>
+    
+                  <tr>
+                    <th>cliente</th>
+                    
+                    <th>Endereço de Origem</th>
+                    <th>Endereço de Destino</th>
+                    <th>Produto</th>
+                    <th>Status Atual</th>
+                  </tr>
+                 
+                </thead>
+                <tbody class="tabela01" id="tabela01">
+                  <tr class="pedido">
+                    
+                    <td>bea</td>
+                    <td>morada do ouro</td>
+                    <td>coxipó</td>
+                    <td>vento</td>
+                    <td>em andamento</td>
+                  </tr>
+                              
+                </tbody>				
+              </table>
+             
+
+        </section>
+    </main>
+    
+        
+        <section class="container">
+        <h2 id="titulo-form">Agendar nova entrega</h2>
+        <ul id="mensagens-erro"></ul>
+        <form class="adicionar" id="adicionar">
+        <div class="campo">
+        <label for="nome">cliente:</label>
+        <input id="nome" name="infoNome" type="text" placeholder="digite seu nome" class="campo">
+            </div>
+            <div class="grupo">
+                <label for="origem">Origem:</label>
+                <input id="origem" name="origem" type="text" placeholder="digite o endereço de origem" class="campo campo-medio">
+            </div>
+            <div class="grupo">
+                <label for="destino">Destino:</label>
+                <input id="destino" name="destino" type="text" placeholder="digite o endereço de destino" class="campo campo-medio">
+            </div>
+            <div class="grupo">
+                <label for="produto">produto:</label>
+                <input id="produto" name="produto" type="text" placeholder="digite o tipo do produto" class="campo">
+            </div>
+            <select name="select">
+                <option value="Em andamento">Em andamento</option>
+                <option value="Entregue" >Entregue</option>
+                <option value="status" selected>status</option>
+                
+              </select>
+           
+            <button class="enviar" id="enviar">Enviar</button>
+        </form>
+    
+</section>
+
+
+<script src="js/form.js"></script>
+<script src="js/removePedido.js"></script>
+</body>
+</html>
