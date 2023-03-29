@@ -10,12 +10,12 @@ botaoAdd.addEventListener('click', function (evento) {
 
     let erros = validaPedido(pedido)
 
-     if (erros.length > 0) {
-         MenssagemErro(erros)
+    if (erros.length > 0) {
+        MenssagemErro(erros)
         return
-     }
+    }
 
-     addPedido(pedido)
+    addPedido(pedido)
 
 })
 
@@ -23,31 +23,31 @@ botaoAdd.addEventListener('click', function (evento) {
 //                                  |
 //                                  |
 //                                 \/
-function validaPedido(pedido){
+function validaPedido(pedido) {
     let erros = []
 
-    if(pedido.nome.length == 0){
+    if (pedido.nome.length == 0) {
         erros.push('O campo "CLIENTE" não pode estar em branco')
     }
-    if(pedido.origem.length == 0){
+    if (pedido.origem.length == 0) {
         erros.push('O campo "ORIGEM" não pode estar em branco')
     }
-    if(pedido.destino.length == 0){
+    if (pedido.destino.length == 0) {
         erros.push('O campo "DESTINO" não pode estar em branco')
     }
-    if(pedido.produto.length == 0){
+    if (pedido.produto.length == 0) {
         erros.push('O campo "PRODUTO" não pode estar em branco')
     }
-    
-    
+
+
     return erros
 }
 
-function MenssagemErro(erros){
+function MenssagemErro(erros) {
     let ul = document.querySelector('#mensagens-erro')
     ul.innerHTML = ''
 
-    erros.forEach(function(erros){
+    erros.forEach(function (erros) {
         let li = document.createElement('li')
         li.textContent = erros
         ul.appendChild(li)
@@ -73,13 +73,13 @@ function montarTr(pedido) {
     let pedidoTr = document.createElement('tr')
     pedidoTr.classList.add('pedido')
 
-    
+
     pedidoTr.appendChild(montarTd(pedido.nome, 'info-nome'))
     pedidoTr.appendChild(montarTd(pedido.origem, 'info-origem'))
     pedidoTr.appendChild(montarTd(pedido.destino, 'info-destino'))
     pedidoTr.appendChild(montarTd(pedido.produto, 'info-produto'))
     pedidoTr.appendChild(montarTd(pedido.status, 'info-status'))
-    
+
 
     return pedidoTr
 }
@@ -107,10 +107,10 @@ function getValueForm(form) {
         nome: form.nome.value,
         origem: form.origem.value,
         destino: form.destino.value,
-       produto: form.produto.value,
+        produto: form.produto.value,
         status: form.select.value
     }
-   
-    
+
+
     return pedido
 }
